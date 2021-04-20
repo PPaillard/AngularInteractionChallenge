@@ -1,0 +1,13 @@
+<!-- Affichage des chats disponible pour adoption-->
+<h1>Chats disponible à l'adoption</h1>
+<div *ngFor="let chat of listeAdoption">
+  <p>{{ chat.id }}</p>
+  <p>{{ chat.nom | uppercase }}</p>
+  <p>{{ chat.race }}</p>
+  <p>{{ chat.dateNaissance }}</p>
+  <p>{{ chat.image }}</p>
+  <button (click)="adopterChat(chat)">Adopter</button>
+</div>
+<p>blabla</p>
+<!-- Affichage de MES chats via le composant user-kitten -->
+<app-user-kitten [mesChats]="listeMesChats"></app-user-kitten>

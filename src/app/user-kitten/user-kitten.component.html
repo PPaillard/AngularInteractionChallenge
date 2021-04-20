@@ -1,0 +1,7 @@
+<h1>Mes chats adoptés</h1>
+<div *ngFor="let chat of mesChats">
+  <p>{{ chat.nom | uppercase }}</p>
+  <p>{{ chat.race }}</p>
+  <p>{{ chat.dateNaissance }}</p>
+  <p>{{ chat.image }}</p>
+</div>

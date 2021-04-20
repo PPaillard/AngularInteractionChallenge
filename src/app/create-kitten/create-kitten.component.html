@@ -1,0 +1,57 @@
+<form (ngSubmit)="monFormulaire.valid && soumission()" #monFormulaire="ngForm">
+  <label
+    >Nom du chat :
+    <input
+      type="text"
+      name="nom"
+      [(ngModel)]="chat.nom"
+      required
+      #chatNom="ngModel"
+    />
+  </label>
+  <div *ngIf="monFormulaire.submitted && chatNom.errors">
+    Le nom du chat est obligatoire
+  </div>
+  <label
+    >Race du chat :
+    <input
+      type="text"
+      name="race"
+      [(ngModel)]="chat.race"
+      required
+      #chatRace="ngModel"
+    />
+  </label>
+  <div *ngIf="monFormulaire.submitted && chatRace.errors">
+    La race du chat est obligatoire
+  </div>
+  <label
+    >Date de naissance :
+    <input
+      type="date"
+      name="naissance"
+      [(ngModel)]="chat.dateNaissance"
+      required
+      #chatDate="ngModel"
+    />
+  </label>
+  <div *ngIf="monFormulaire.submitted && chatDate.errors">
+    La date de naissace du chat est obligatoire
+  </div>
+  <label
+    >Image du chat :
+    <input
+      type="text"
+      name="image"
+      [(ngModel)]="chat.image"
+      required
+      #chatImage="ngModel"
+    />
+  </label>
+  <div *ngIf="monFormulaire.submitted && chatImage.errors">
+    L'image du chat est obligatoire
+  </div>
+  <button [ngClass]="{ btn_valid: monFormulaire.valid }" type="submit">
+    Creer chat
+  </button>
+</form>
